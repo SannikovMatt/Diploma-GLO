@@ -3705,6 +3705,12 @@ div.wave-block:nth-child(17):after {
   @media (max-width: 575px) and (max-height: 540px) {
     .popup-dialog-menu {
       height: 480px; } }
+
+      .popup-dialog-menu .active {
+
+        -webkit-transform: translate3d(0, 0, 0);
+           (0, 0, 0);
+      } 
     @media (max-width: 1024px) {
       .popup-dialog-portfolio {
         height: 857px; } }
