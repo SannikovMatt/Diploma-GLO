@@ -7,9 +7,17 @@ export const PopupRepairTypes = ()=>{
 
 
     closeBtn.addEventListener('click',()=>{
-
         closeRepairTypesPopUp();
     });
+
+    document.addEventListener('click',(e)=>{
+
+       const target = e.target;       
+       if(!target.closest('.popup-dialog-repair-types') && !target.closest('.menu-link')){
+           closeRepairTypesPopUp();
+           return;
+       }
+    })
 }
 
 
@@ -26,4 +34,6 @@ export const closeRepairTypesPopUp = () => {
     repairTypes.style.visibility = 'hidden';
 
 }
+
+
 
