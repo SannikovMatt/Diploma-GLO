@@ -14,7 +14,7 @@ export const PopupRepairTypes = () => {
 
         const target = e.target;
 
-        console.log(target);
+
 
         if (target.closest('.link-list-repair')) {
 
@@ -35,7 +35,7 @@ export const PopupRepairTypes = () => {
             !target.closest('.menu-link') &&
             !target.closest('.link-list-repair')) {
 
-            console.log('zawel');
+    
             closeRepairTypesPopUp();
             return;
         }

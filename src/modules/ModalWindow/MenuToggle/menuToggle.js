@@ -23,10 +23,6 @@ export const closeMenuPopUp = () => {
     const popupMenu = document.querySelector('.popup-dialog-menu');
  
         popupMenu.style.transform = '';
-    
-
-
-
 };
 
 export const menuToggle = () => {

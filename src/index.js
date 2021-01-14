@@ -1,10 +1,12 @@
 import { menuToggle } from './modules/ModalWindow/MenuToggle/menuToggle.js';
 import { PopupRepairTypes } from './modules/ModalWindow/PopupRepairTypes/PopupRepairTypes';
-import { SliderCarusel} from './modules/PartnersCarousel/Carousel.js';
-
+import { SliderCarusel } from './modules/PartnersCarousel/Carousel.js';
+import { maskPhoneAllFields } from './modules/maskphone/maskPhoneAllFields';
 
 menuToggle();
 PopupRepairTypes();
+maskPhoneAllFields();
+
 
 
 /*const options = {
@@ -25,4 +27,4 @@ PopupRepairTypes();
 
 const carousel = new SliderCarusel(options);
 
-carousel.init();*/ 
+carousel.init();*/
