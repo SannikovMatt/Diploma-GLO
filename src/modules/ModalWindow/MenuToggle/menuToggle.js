@@ -11,14 +11,19 @@ const scrollMenu = (elmToReach) => {
     );
 };
 
+
+window.addEventListener('resize',()=>{   
+
+        const popupMenu = document.querySelector('.popup-dialog-menu');
+        popupMenu.style.transform = '';
+    
+});
+
 export const closeMenuPopUp = () => {
     const popupMenu = document.querySelector('.popup-dialog-menu');
-    if (window.screen.width > 575) {
-        popupMenu.style.transform = 'translate3d(645px,0,0)';
-
-    } else {
-        popupMenu.style.transform = 'translate3d(0,-100vh,0)';
-    }
+ 
+        popupMenu.style.transform = '';
+    
 
 
 
