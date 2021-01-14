@@ -1,22 +1,42 @@
 
 'use strict';
 
+//Само модальное окно диалоговое
+const repairTypes = document.querySelector('.popup-dialog-repair-types');
+//Кнопка закрытия для модального окна
+const closeBtn = repairTypes.querySelector('.close');
+//Блок табов данной секции
+const repairTypesTab = document.querySelector('.repair-types-tab');
+//Линк на открытие модального окна
+const linkListRepair = repairTypesTab.querySelector('.link-list-repair');
+//Подложка за модальным окном
+const popupRepairTypesSubstrate = document.querySelector('.popup-repair-types');
+
+
+//Экспортируем данные 2 функции чтобы секция с меню тоже могла ими воспользоваться
+
+
+//Закрытие модального окна
+export const openRepairTypesPopUp = () => {
+   
+    popupRepairTypesSubstrate.style.visibility = 'visible';
+
+};
+
+//Открытие модального окна
+export const closeRepairTypesPopUp = () => {
+    
+    popupRepairTypesSubstrate.style.visibility = '';
+
+};
+
+//Ставим обработчики на для модального окна
 export const PopupRepairTypes = () => {
 
-
-    const repairTypes = document.querySelector('.popup-repair-types');
-    const closeBtn = repairTypes.querySelector('.close');
-    let linkListRepair = document.querySelector('.link-list-repair');
-
-    console.log(linkListRepair);
-
-
-    linkListRepair.addEventListener('click', (e) => {
-        linkListRepair = document.querySelector('.link-list-repair > a');
+    //Клик на ссылку открывает модальное окно
+    linkListRepair.addEventListener('click', (e) => {       
 
         const target = e.target;
-
-
 
         if (target.closest('.link-list-repair')) {
 
@@ -26,18 +46,18 @@ export const PopupRepairTypes = () => {
 
     });
 
+    //Клик на крестик закрывает его
     closeBtn.addEventListener('click', () => {
         closeRepairTypesPopUp();
     });
 
-    document.addEventListener('click', (e) => {
+    //Клик вне окна закрывает его
+    popupRepairTypesSubstrate.addEventListener('click', (e) => {
 
         const target = e.target;
-        if (!target.closest('.popup-dialog-repair-types') &&
-            !target.closest('.menu-link') &&
-            !target.closest('.link-list-repair')) {
 
-    
+
+        if (!target.closest('.popup-dialog-repair-types')) {    
             closeRepairTypesPopUp();
             return;
         }
@@ -46,18 +66,6 @@ export const PopupRepairTypes = () => {
 
 
 
-export const openRepairTypesPopUp = () => {
-    const repairTypes = document.querySelector('.popup-repair-types');
-    repairTypes.style.visibility = 'visible';
-
-};
-
-
-export const closeRepairTypesPopUp = () => {
-    const repairTypes = document.querySelector('.popup-repair-types');
-    repairTypes.style.visibility = 'hidden';
-
-};
 
 
 
