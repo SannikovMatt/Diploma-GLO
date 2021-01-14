@@ -1,12 +1,14 @@
 
+'use strict';
+
 export const PopupRepairTypes = () => {
 
 
     const repairTypes = document.querySelector('.popup-repair-types');
     const closeBtn = repairTypes.querySelector('.close');
-    let linkListRepair = document.querySelector('.link-list-repair > a');
+    let linkListRepair = document.querySelector('.link-list-repair');
 
-
+    console.log(linkListRepair);
 
 
     linkListRepair.addEventListener('click', (e) => {
