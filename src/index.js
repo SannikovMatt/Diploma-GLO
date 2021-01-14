@@ -5,6 +5,7 @@ import { maskPhoneAllFields } from './modules/maskphone/maskPhoneAllFields';
 import {setPopupConsult }  from './modules/ModalWindow/PopupConsultation/PopupConsultation';
 import { setPopUpPrivacy } from './modules/ModalWindow/PopupPrivacy/PopupPrivacy.js';
 import { setHintsFormula } from './modules/ModalWindow/Hints/HintsFormula/setHintsFormula.js';
+import { setNumberAccordion } from './modules/numberAccordion/numberAccordion.js';
 
 //Обработчики меню
 menuToggle();
@@ -24,6 +25,8 @@ setPopUpPrivacy();
  
 //Подасказки на секции Формула
 setHintsFormula();
+
+setNumberAccordion();
 
 
 
