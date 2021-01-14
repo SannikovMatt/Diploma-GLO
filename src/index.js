@@ -6,15 +6,23 @@ import {setPopupConsult }  from './modules/ModalWindow/PopupConsultation/PopupCo
 import { setPopUpPrivacy } from './modules/ModalWindow/PopupPrivacy/PopupPrivacy.js';
 import { setHintsFormula } from './modules/ModalWindow/Hints/HintsFormula/setHintsFormula.js';
 
-
+//Обработчики меню
 menuToggle();
+
+
+//Обработка Типов Ремонта
 PopupRepairTypes();
+
+//Маска для всех полей с телефонами
 maskPhoneAllFields();
 
-
+//Модалка консультации
 setPopupConsult();
-setPopUpPrivacy();
 
+//Модалка Конфидециальности
+setPopUpPrivacy();
+ 
+//Подасказки на секции Формула
 setHintsFormula();
 
 
