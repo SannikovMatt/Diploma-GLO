@@ -4,6 +4,9 @@ import { SliderCarusel } from './modules/PartnersCarousel/Carousel.js';
 import { maskPhoneAllFields } from './modules/maskphone/maskPhoneAllFields';
 import {setPopupConsult }  from './modules/ModalWindow/PopupConsultation/PopupConsultation';
 import { setPopUpPrivacy } from './modules/ModalWindow/PopupPrivacy/PopupPrivacy.js';
+import { setHintsFormula } from './modules/ModalWindow/Hints/HintsFormula/setHintsFormula.js';
+
+
 menuToggle();
 PopupRepairTypes();
 maskPhoneAllFields();
@@ -11,6 +14,8 @@ maskPhoneAllFields();
 
 setPopupConsult();
 setPopUpPrivacy();
+
+setHintsFormula();
 
 
 
