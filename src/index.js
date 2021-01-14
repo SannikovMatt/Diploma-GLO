@@ -3,12 +3,14 @@ import { PopupRepairTypes } from './modules/ModalWindow/PopupRepairTypes/PopupRe
 import { SliderCarusel } from './modules/PartnersCarousel/Carousel.js';
 import { maskPhoneAllFields } from './modules/maskphone/maskPhoneAllFields';
 import {setPopupConsult }  from './modules/ModalWindow/PopupConsultation/PopupConsultation';
+import { setPopUpPrivacy } from './modules/ModalWindow/PopupPrivacy/PopupPrivacy.js';
 menuToggle();
 PopupRepairTypes();
 maskPhoneAllFields();
 
 
 setPopupConsult();
+setPopUpPrivacy();
 
 
 
