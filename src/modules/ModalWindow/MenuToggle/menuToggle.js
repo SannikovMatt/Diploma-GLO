@@ -29,6 +29,21 @@ export const menuToggle = () => {
     const popupMenu = document.querySelector('.popup-dialog-menu');
     const menuIcon = document.querySelector('.menu__icon');
     const closeMenuBtn = document.querySelector('.close-menu');
+    const footerButton = document.querySelector('.button-footer');
+
+
+
+
+    footerButton.addEventListener('click',(e)=>{
+        const target  = e.target;
+
+        if(target.closest('.button-footer')){
+
+                e.preventDefault();                
+                const elementToReach = document.getElementById('main');             
+                scrollMenu(elementToReach);
+        }
+    });
 
     //Если нажат крестик на меню закрываем меню
     closeMenuBtn.addEventListener('click', closeMenuPopUp);
@@ -44,7 +59,7 @@ export const menuToggle = () => {
     popupMenu.addEventListener('click',(e)=>{
         const target = e.target;           
         //Если клик был по пунктам меню или нижней кнопке скролим плавно к элементу,закрывая при этом окно меню
-          if (target.closest('.popup-menu-nav__item') || target.closest('.button-footer')) {
+          if (target.closest('.popup-menu-nav__item') ) {
               e.preventDefault();
   
               const id = target.getAttribute('href');
