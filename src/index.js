@@ -9,6 +9,8 @@ import { setNumberAccordion } from './modules/numberAccordion/numberAccordion.js
 import { formHandle } from './modules/SendForms/formHandle.js';
 import { setFaqAccordion } from './modules/FaqAccordion/setFaqAccordion.js';
 import { setPopupThank } from './modules/ModalWindow/PopupThank/setPopupThank.js';
+import { setDocumentSlider } from './modules/Sliders/documentBlockSlider/setDocumentSlider.js';
+import { setDocumentPopUp } from './modules/ModalWindow/PopUpDocument/setDocumentPopup.js';
 
 //Обработчики меню
 menuToggle();
@@ -32,14 +34,20 @@ setHintsFormula();
 //Аккордион номера
 setNumberAccordion();
 
+//Обрабатываем формы
 formHandle();
 
-
+//Аккордион
 setFaqAccordion();
 
-
+//Обрабатываем окно благодарности
 setPopupThank();
 
+//Обрабатываем слайды документов
+setDocumentSlider();
+
+
+setDocumentPopUp();
 
 
 /*const options = {
