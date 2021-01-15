@@ -7,6 +7,7 @@ import { setPopUpPrivacy } from './modules/ModalWindow/PopupPrivacy/PopupPrivacy
 import { setHintsFormula } from './modules/ModalWindow/Hints/HintsFormula/setHintsFormula.js';
 import { setNumberAccordion } from './modules/numberAccordion/numberAccordion.js';
 import { formHandle } from './modules/SendForms/formHandle.js';
+import { setFaqAccordion } from './modules/FaqAccordion/setFaqAccordion.js';
 
 //Обработчики меню
 menuToggle();
@@ -31,6 +32,9 @@ setHintsFormula();
 setNumberAccordion();
 
 formHandle();
+
+
+setFaqAccordion();
 
 
 
