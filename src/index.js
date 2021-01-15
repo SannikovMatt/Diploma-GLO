@@ -11,6 +11,7 @@ import { setFaqAccordion } from './modules/FaqAccordion/setFaqAccordion.js';
 import { setPopupThank } from './modules/ModalWindow/PopupThank/setPopupThank.js';
 import { setDocumentSlider } from './modules/Sliders/documentBlockSlider/setDocumentSlider.js';
 import { setDocumentPopUp } from './modules/ModalWindow/PopUpDocument/setDocumentPopup.js';
+import { setDocumentPopUpSlider } from './modules/ModalWindow/PopUpDocument/PopUpDocSlider/setPopupDocSlider.js';
 
 //Обработчики меню
 menuToggle();
@@ -46,8 +47,11 @@ setPopupThank();
 //Обрабатываем слайды документов
 setDocumentSlider();
 
-
+//Настраиваем кнопки попап окна
 setDocumentPopUp();
+
+//Слайдер попап окна
+setDocumentPopUpSlider();
 
 
 /*const options = {

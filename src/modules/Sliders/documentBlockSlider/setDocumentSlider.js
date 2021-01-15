@@ -34,6 +34,9 @@ const moveLeft = () => {
     checkPosition();
 }
 
+
+console.log('zawel');
+
 export const setDocumentSlider = () => {
     checkPosition();
     leftBtn.addEventListener('click', moveLeft);

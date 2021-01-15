@@ -21,7 +21,17 @@ const hidePopUpDoc = () => {
 }
 export const setDocumentPopUp = () => {
     sliderItems.forEach(item => {item.addEventListener('click', showPopUpDoc)});
-    closeBtn.forEach((closeBtn)=>{closeBtn.addEventListener('click', hidePopUpDoc);  });
+    closeBtn.forEach((closeBtn)=>{closeBtn.addEventListener('click', hidePopUpDoc); 
+    docPopup.addEventListener('click',(e)=>{
+        const target = e.target;
+
+        if(!target.closest('.popup-dialog-transparency')){
+
+            hidePopUpDoc();
+        }
+
+    });
+});
 
 }
 
