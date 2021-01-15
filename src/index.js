@@ -8,6 +8,7 @@ import { setHintsFormula } from './modules/ModalWindow/Hints/HintsFormula/setHin
 import { setNumberAccordion } from './modules/numberAccordion/numberAccordion.js';
 import { formHandle } from './modules/SendForms/formHandle.js';
 import { setFaqAccordion } from './modules/FaqAccordion/setFaqAccordion.js';
+import { setPopupThank } from './modules/ModalWindow/PopupThank/setPopupThank.js';
 
 //Обработчики меню
 menuToggle();
@@ -35,6 +36,9 @@ formHandle();
 
 
 setFaqAccordion();
+
+
+setPopupThank();
 
 
 

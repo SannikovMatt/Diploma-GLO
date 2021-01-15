@@ -1,4 +1,5 @@
 import { closeConsultationPopup } from "../ModalWindow/PopupConsultation/PopupConsultation";
+import { showPopupThank } from "../ModalWindow/PopupThank/setPopupThank";
 
 //Находим все формы
 const forms = document.querySelectorAll('form');
@@ -56,11 +57,16 @@ const submittingHandle = (e) => {
 
     //Проверям была ли заполнена форма
     if (body) {
+
+        
         postData(body)
             .then(response => {
                 if (response.ok) {
                     target.reset();
                     closeConsultationPopup();
+
+                    //Показываем окно благодарности при успешной отпрвке
+                    showPopupThank();
                 }
             })
     }
