@@ -6,6 +6,7 @@ import {setPopupConsult }  from './modules/ModalWindow/PopupConsultation/PopupCo
 import { setPopUpPrivacy } from './modules/ModalWindow/PopupPrivacy/PopupPrivacy.js';
 import { setHintsFormula } from './modules/ModalWindow/Hints/HintsFormula/setHintsFormula.js';
 import { setNumberAccordion } from './modules/numberAccordion/numberAccordion.js';
+import { formHandle } from './modules/SendForms/formHandle.js';
 
 //Обработчики меню
 menuToggle();
@@ -26,7 +27,10 @@ setPopUpPrivacy();
 //Подасказки на секции Формула
 setHintsFormula();
 
+//Аккордион номера
 setNumberAccordion();
+
+formHandle();
 
 
 

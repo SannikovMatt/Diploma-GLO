@@ -13,7 +13,7 @@ const consultOpenBtnHandler = () => {
 };
 
 //Закрытие окна консультации
-const closeConsultationPopup = () => {
+export const closeConsultationPopup = () => {
     consultPopUp.style.visibility = '';
 };
 
