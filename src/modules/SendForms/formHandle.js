@@ -9,7 +9,7 @@ const postData = (data) => {
 
 
 
-    return fetch('./server.php', {
+    return fetch('../server.php', {
 
         method: 'POST',
         headers: {
