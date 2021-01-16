@@ -35,7 +35,7 @@ const moveLeft = () => {
 }
 
 
-console.log('zawel');
+
 
 export const setDocumentSlider = () => {
     checkPosition();

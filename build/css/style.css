@@ -1130,6 +1130,35 @@ template, [hidden] {
       .repair-types-slider {
         width: 256px;
         height: 256px; } }
+
+        .types-repair1,
+        .types-repair2,
+        .types-repair3,
+        .types-repair4,
+        .types-repair5{
+
+          position:absolute;
+          opacity : 0;
+          transition:opacity 0.5s ease;
+          width: 100%;
+         
+        } 
+        
+       
+
+        .repair-types-slider__slide{
+
+          position:absolute;
+          opacity : 0;
+          transition:opacity 0.5s ease;
+         
+        }
+
+        .active__repair__item{
+          opacity:1;
+        }
+        
+
     .repair-types-slider-wrap {
       position: relative; }
       @media (max-width: 1024px) {
