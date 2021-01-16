@@ -14,6 +14,7 @@ import { setDocumentPopUpSlider } from './modules/ModalWindow/PopUpDocument/PopU
 import { setDocumentSlider } from './modules/SlidersAndTabs/DocumentTransparacySection/Sliders/documentBlockSlider/setDocumentSlider.js';
 import { setRepairTypesMainSlider } from './modules/SlidersAndTabs/RepairTypesSection/RepairTypesSliders/mainslider/setRepairTypesMainSlider.js';
 import { setRepairTypesTabs } from './modules/SlidersAndTabs/RepairTypesSection/RepairTypesTabs/setRepairTypesTabs.js';
+import { setRepairTypesTabSlider } from './modules/SlidersAndTabs/RepairTypesSection/RepairTypesSliders/tabslider/setRepairTypesTabSlider.js';
 
 //Обработчики меню
 menuToggle();
@@ -62,6 +63,8 @@ setDocumentPopUpSlider();
 setRepairTypesTabs();
 
 setRepairTypesMainSlider();
+
+setRepairTypesTabSlider();
 
 
 /*const options = {

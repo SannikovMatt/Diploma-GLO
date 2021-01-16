@@ -5300,7 +5300,8 @@ div.wave-block:nth-child(17):after {
     transition: 0.4s; }
     .nav-list-repair {
       min-width: 390px;
-      display: block; }
+      display: block; 
+    transition: margin-left  0.5s ease-in-out;}
       @media (max-width: 1024px) {
         .nav-list-repair {
           min-width: 1200px;
