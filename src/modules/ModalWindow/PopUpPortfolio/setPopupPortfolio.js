@@ -1,7 +1,11 @@
+import { setPosition } from "../../SlidersAndTabs/Portfolio/Sliders/setPortFolioPopupSlider";
+
 const popUpPortfolio = document.querySelector('.popup-portfolio');
 const closeBtn = popUpPortfolio.querySelectorAll('.close');
 
 const portfolioSlider = document.querySelector('.portfolio-slider');
+
+const tabs = portfolioSlider.querySelectorAll('.portfolio-slider__slide-frame')
 const portfolioSliderMobile = document.querySelector('.portfolio-slider-mobile')
 
 
@@ -22,7 +26,7 @@ export const setPopUpPortfolio = () => {
 
 
 
-    portfolioSliderMobile.addEventListener('click',(e)=>{
+    portfolioSliderMobile.addEventListener('click', (e) => {
 
         const target = e.target;
 
@@ -31,20 +35,49 @@ export const setPopUpPortfolio = () => {
 
     portfolioSlider.addEventListener('click', (e) => {
 
-
-        console.log();
         const target = e.target;
 
-        showPopup();
+        if (target.closest('.portfolio-slider__slide-frame')) {
+
+
+            const targetTab = target.closest('.portfolio-slider__slide-frame');
+
+            tabs.forEach((tab, index) => {
+
+               
+                if (tab === targetTab) {
+                    setPosition(index);
+                    showPopup();
+                }
+
+            });
+
+
+
+        }
+
+    })
+
+
+    popUpPortfolio.addEventListener('click', (e) => {
+        const target = e.target;
+
+
+        if (!target.closest('.popup-dialog-portfolio')) {
+            hidePopUp();
+
+        }
+
+
 
 
 
     })
 
-
     closeBtn.forEach((btn) => {
-        btn.addEventListener('click', hidePopUp)    })
+        btn.addEventListener('click', hidePopUp)
+    })
 
-    
+
 
 }
