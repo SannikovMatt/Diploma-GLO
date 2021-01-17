@@ -8,7 +8,10 @@ const closeBtn = repairTypes.querySelector('.close');
 //Блок табов данной секции
 const repairTypesTab = document.querySelector('.repair-types-tab');
 //Линк на открытие модального окна
-const linkListRepair = repairTypesTab.querySelector('.link-list-repair');
+const linkListRepair = document.querySelectorAll('.link-list-repair');
+
+
+
 //Подложка за модальным окном
 const popupRepairTypesSubstrate = document.querySelector('.popup-repair-types');
 
@@ -34,7 +37,7 @@ export const closeRepairTypesPopUp = () => {
 export const PopupRepairTypes = () => {
 
     //Клик на ссылку открывает модальное окно
-    linkListRepair.addEventListener('click', (e) => {       
+    linkListRepair[0].addEventListener('click', (e) => {       
 
         const target = e.target;
 
@@ -45,6 +48,20 @@ export const PopupRepairTypes = () => {
 
 
     });
+    linkListRepair[1].addEventListener('click', (e) => {       
+
+        const target = e.target;
+
+        if (target.closest('.link-list-repair')) {
+
+            openRepairTypesPopUp();
+        }
+
+
+    });
+
+
+   
 
     //Клик на крестик закрывает его
     closeBtn.addEventListener('click', () => {
