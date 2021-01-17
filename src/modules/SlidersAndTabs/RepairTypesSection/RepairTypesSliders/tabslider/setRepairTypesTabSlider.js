@@ -9,6 +9,12 @@ const tabbtns = document.querySelectorAll('.nav-list-repair .button_o');
 let position = 0;
 
 
+window.addEventListener('resize',()=>{
+
+    if(document.documentElement.clientWidth>1024)
+    navSlider.style.marginLeft = '' ;
+})
+
 const getMoveStep = (requestoMove) => {
     let visibleSize = wraper.getBoundingClientRect().width;
     let sizeSlides = navSlider.getBoundingClientRect().width;
