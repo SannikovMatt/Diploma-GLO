@@ -13,7 +13,7 @@ const allSlides = portfolioSliderMobile.querySelectorAll('.portfolio-slider__sli
 let position = 0;
 let slidesAmount = allSlides.length;
 
-F
+
 const checkPosition = () => {
 
     if (position > slidesAmount - 1) {

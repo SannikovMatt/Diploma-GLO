@@ -18,6 +18,7 @@ import { setRepairTypesTabSlider } from './modules/SlidersAndTabs/RepairTypesSec
 import { setPortfolioMainSlider } from './modules/SlidersAndTabs/Portfolio/Sliders/setPortfolioMainSlider.js';
 import { setPopUpPortfolio } from './modules/ModalWindow/PopUpPortfolio/setPopupPortfolio.js';
 import { setPortFolioPopupSlider } from './modules/SlidersAndTabs/Portfolio/Sliders/setPortFolioPopupSlider.js';
+import { setReviewSlider } from './modules/SlidersAndTabs/ReviewSlider/setReviewSlider.js';
 
 //Обработчики меню
 menuToggle();
@@ -62,22 +63,25 @@ setDocumentPopUpSlider();
 
 
 
-
+/*** REPAIR ****/
 setRepairTypesTabs();
-
 setRepairTypesMainSlider();
-
 setRepairTypesTabSlider();
 
 
 
 
-//Portfolio 
+/******Portfolio*******/ 
 
 setPortfolioMainSlider();
 setPopUpPortfolio();
-
 setPortFolioPopupSlider();
+
+
+
+/****Review****/
+setReviewSlider();
+
 
 /*const options = {
 
