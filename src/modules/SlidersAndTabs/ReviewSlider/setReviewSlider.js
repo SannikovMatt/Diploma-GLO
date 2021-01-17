@@ -9,7 +9,7 @@ const allSlides = mainWrap.querySelectorAll('.reviews-slider__slide');
 
 
 let position = 0;
-let slidesAmount = allSlides.length
+let slidesAmount = allSlides.length;
 
 
 const checkPosition = () => {
