@@ -1,5 +1,5 @@
 
-const thankPopup = document.querySelector('.popup-thank-bg');
+const thankPopup = document.querySelector('.popup-thank');
 const closeBtn = document.querySelector('.close-thank');
 
 export const showPopupThank = () => {
@@ -8,7 +8,7 @@ export const showPopupThank = () => {
 
 }
 
-const hidePopupThank = () => {
+export const hidePopupThank = () => {
 
     thankPopup.style.visibility = '';
 

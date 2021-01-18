@@ -1,5 +1,7 @@
 import { closeConsultationPopup } from "../ModalWindow/PopupConsultation/PopupConsultation";
-import { showPopupThank } from "../ModalWindow/PopupThank/setPopupThank";
+import { hidePopupThank, showPopupThank } from "../ModalWindow/PopupThank/setPopupThank";
+
+
 
 //Находим все формы
 const forms = document.querySelectorAll('form');
@@ -22,21 +24,72 @@ const postData = (data) => {
 
 };
 
+const showErr = (setTo) => {
+
+
+    const errorContainer = document.createElement('div');
+    const errorStyles = document.createElement('style');
+    errorStyles.id = 'error__style';
+    errorContainer.classList.add('formula-item__descr')
+
+    errorStyles.innerHTML =
+        `
+    #error__box{
+        
+        width:120%;
+        visibility : visible;
+        opacity:1;
+        background : yellow;
+        position:absolute;
+        height:120%;
+        border-radius:50px;
+        display:flex;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        left:-15%
+
+        
+    }
+    #error__box:hover{
+
+        color:green; 
+        cursor:pointer;
+    }
+        
+    
+    
+    `
+
+    errorContainer.id = 'error__box';
+
+    errorContainer.textContent = 'Чек бокс не отмечен';
+
+    document.head.appendChild(errorStyles);
+    setTo.appendChild(errorContainer);
+
+}
+
 //Обрабатываем "submit"
 const submittingHandle = (e) => {
 
     e.preventDefault();
-   
+
     const target = e.target;
-    const checkBox = target.querySelector('[type="checkbox"]');    
+    const checkBox = target.querySelector('[type="checkbox"]');
     const inputName = target.querySelector('[name="name"]');
 
-    
-    if(inputName){
+
+
+
+    if (inputName) {
         inputName.required = "true";
     }
 
-    if (checkBox.checked===false) {
+    if (checkBox.checked === false) {
+
+        //showErr(checkBox.parentElement);
+
         console.error('Unchecked Checkox');
         return;
     }
@@ -58,7 +111,7 @@ const submittingHandle = (e) => {
     //Проверям была ли заполнена форма
     if (body) {
 
-        
+
         postData(body)
             .then(response => {
                 if (response.ok) {
@@ -67,6 +120,8 @@ const submittingHandle = (e) => {
 
                     //Показываем окно благодарности при успешной отпрвке
                     showPopupThank();
+                    setTimeout(hidePopupThank, 5000);
+
                 }
             })
     }
