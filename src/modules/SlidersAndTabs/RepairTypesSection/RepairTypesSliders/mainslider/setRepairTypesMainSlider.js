@@ -42,15 +42,6 @@ export const getCurrentSlidesSet = () => {
 
 }
 
-// const getCurrentSlideIndex = () => {
-
-//     curentSlides.forEach((slide, index) => {
-//         if (slide.classList.contains('active__repair__item')) {
-//             currentSlideIndex = index;
-//             position = index;
-//         }
-//     });
-// }
 
 
 //Устанавливаем счетчик

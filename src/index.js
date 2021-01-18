@@ -19,6 +19,12 @@ import { setPortfolioMainSlider } from './modules/SlidersAndTabs/Portfolio/Slide
 import { setPopUpPortfolio } from './modules/ModalWindow/PopUpPortfolio/setPopupPortfolio.js';
 import { setPortFolioPopupSlider } from './modules/SlidersAndTabs/Portfolio/Sliders/setPortFolioPopupSlider.js';
 import { setReviewSlider } from './modules/SlidersAndTabs/ReviewSlider/setReviewSlider.js';
+import { setDesignMainTabs } from './modules/SlidersAndTabs/Designs/main/Tabs/setDesignMainTabs.js';
+import { setDesignPreviewTabs } from './modules/SlidersAndTabs/Designs/main/Tabs/setDesignPreviewTabs.js';
+import { setDesignMainSlider } from './modules/SlidersAndTabs/Designs/main/Sliders/designMainSlider/setDesignMainSlider.js';
+import { setDesignPopUp } from './modules/SlidersAndTabs/Designs/PopUp/setDesignPopUp.js';
+import { setDesignPopUpTabs } from './modules/SlidersAndTabs/Designs/PopUp/PopUpTabs/setDesignPopUpTabs.js';
+import { setDesignPopUpSlider } from './modules/SlidersAndTabs/Designs/PopUp/PopUpSlider/setDesignPopupSlider.js';
 
 //Обработчики меню
 menuToggle();
@@ -81,6 +87,23 @@ setPortFolioPopupSlider();
 
 /****Review****/
 setReviewSlider();
+
+
+
+
+/*****Design*****/
+
+
+setDesignMainTabs();
+setDesignPreviewTabs();
+setDesignMainSlider();
+
+setDesignPopUp();
+
+setDesignPopUpTabs();
+
+setDesignPopUpSlider();
+
 
 
 /*const options = {
