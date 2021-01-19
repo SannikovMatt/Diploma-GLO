@@ -1,4 +1,10 @@
+import "@babel/polyfill";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import 'element-closest-polyfill';
+import 'whatwg-fetch';
+
+
 
 import { menuToggle } from './modules/ModalWindow/MenuToggle/menuToggle.js';
 import { PopupRepairTypes } from './modules/ModalWindow/PopupRepairTypes/PopupRepairTypes';

@@ -15,7 +15,7 @@ module.exports = {
 
     entry: {
 
-        main: ['element-closest-polyfill','@babel/polyfill','./index.js']
+        main: ['@babel/polyfill','./index.js']
     },
     output: {
         filename: `./js/${filename('js')}`,
@@ -52,7 +52,10 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: [["@babel/preset-env", { "targets": {
+                            "chrome": "58",
+                            "ie": "11"
+                        } }]]
                     }
                 }
 
