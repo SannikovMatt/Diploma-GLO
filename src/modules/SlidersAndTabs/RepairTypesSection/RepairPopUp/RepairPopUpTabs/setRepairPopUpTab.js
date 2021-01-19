@@ -1,6 +1,3 @@
-import { setRepairTypesTabSlider } from "../../RepairTypesSliders/tabslider/setRepairTypesTabSlider";
-
-
 
 
 

@@ -34,6 +34,7 @@ import { setDesignPopUp } from './modules/SlidersAndTabs/Designs/PopUp/setDesign
 import { setDesignPopUpTabs } from './modules/SlidersAndTabs/Designs/PopUp/PopUpTabs/setDesignPopUpTabs.js';
 import { setDesignPopUpSlider } from './modules/SlidersAndTabs/Designs/PopUp/PopUpSlider/setDesignPopupSlider.js';
 import { setRepairPopUpTab } from './modules/SlidersAndTabs/RepairTypesSection/RepairPopUp/RepairPopUpTabs/setRepairPopUpTab.js';
+import { setSchemeTab } from "./modules/SlidersAndTabs/Scheme/ShemeTabs/setSchemeTab.js";
 
 //Обработчики меню
 menuToggle();
@@ -88,7 +89,7 @@ setRepairPopUpTab();
 
 
 
-/******Portfolio*******/ 
+/******Portfolio*******/
 
 setPortfolioMainSlider();
 setPopUpPortfolio();
@@ -110,10 +111,22 @@ setDesignPreviewTabs();
 setDesignMainSlider();
 
 setDesignPopUp();
-
 setDesignPopUpTabs();
-
 setDesignPopUpSlider();
+
+
+/****Scheme*****/
+
+setSchemeTab();
+
+
+
+
+
+
+
+
+
 
 
 

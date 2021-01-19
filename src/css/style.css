@@ -3189,7 +3189,9 @@ div.wave-block:nth-child(17):after {
     .scheme-slider-wrap {
       position: relative; }
     .scheme-slider__slide {
-      position: relative;
+      position: absolute;
+      opacity:0;
+      transition: opacity 0.5s ;
       overflow: hidden; }
       @media (max-width: 575px) {
         .scheme-slider__slide {
