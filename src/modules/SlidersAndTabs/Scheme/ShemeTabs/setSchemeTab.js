@@ -52,7 +52,6 @@ export const setSchemeTab = () => {
 
     mainContainer.addEventListener('click', (e) => {
 
-        console.log('zawel');
         let target = e.target.closest('.button_o');
 
         if (!target) { return; }
