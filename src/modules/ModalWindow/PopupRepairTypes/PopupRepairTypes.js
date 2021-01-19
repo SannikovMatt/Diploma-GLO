@@ -1,6 +1,8 @@
 
 'use strict';
 
+import { setDataRepair } from "../../repairData/setDataRepair";
+
 //Само модальное окно диалоговое
 const repairTypes = document.querySelector('.popup-dialog-repair-types');
 //Кнопка закрытия для модального окна
@@ -21,14 +23,15 @@ const popupRepairTypesSubstrate = document.querySelector('.popup-repair-types');
 
 //Закрытие модального окна
 export const openRepairTypesPopUp = () => {
-   
+
     popupRepairTypesSubstrate.style.visibility = 'visible';
 
 };
 
 //Открытие модального окна
 export const closeRepairTypesPopUp = () => {
-    
+
+
     popupRepairTypesSubstrate.style.visibility = '';
 
 };
@@ -37,23 +40,25 @@ export const closeRepairTypesPopUp = () => {
 export const PopupRepairTypes = () => {
 
     //Клик на ссылку открывает модальное окно
-    linkListRepair[0].addEventListener('click', (e) => {       
+    linkListRepair[0].addEventListener('click', (e) => {
+
 
         const target = e.target;
 
         if (target.closest('.link-list-repair')) {
-
+            setDataRepair(repairTypes);
             openRepairTypesPopUp();
         }
 
 
     });
-    linkListRepair[1].addEventListener('click', (e) => {       
+    linkListRepair[1].addEventListener('click', (e) => {
+
 
         const target = e.target;
 
         if (target.closest('.link-list-repair')) {
-
+            setDataRepair(repairTypes);
             openRepairTypesPopUp();
         }
 
@@ -61,7 +66,7 @@ export const PopupRepairTypes = () => {
     });
 
 
-   
+
 
     //Клик на крестик закрывает его
     closeBtn.addEventListener('click', () => {
@@ -74,7 +79,7 @@ export const PopupRepairTypes = () => {
         const target = e.target;
 
 
-        if (!target.closest('.popup-dialog-repair-types')) {    
+        if (!target.closest('.popup-dialog-repair-types')) {
             closeRepairTypesPopUp();
             return;
         }
