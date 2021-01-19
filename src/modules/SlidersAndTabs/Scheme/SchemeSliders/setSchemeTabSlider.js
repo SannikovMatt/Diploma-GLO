@@ -13,25 +13,17 @@ export class TabsSlider {
 
         this.containerAboveSlider = this.sliderWrap.parentElement;
 
-        this.leftLimit;
-        this.rightLimit;
-        this.viewWidth;
-
-        this.leftSliderSide;
-        this.rightSliderSide;
+     
 
         this.translated = 0;
     }
 
     debounce(func, wait, immediate) {
-        var timeout;
-
-
+        var timeout;     
 
         return function executedFunction() {
 
-
-
+         
             var context = this;
             var args = arguments;
 
@@ -53,7 +45,7 @@ export class TabsSlider {
     }
     getNewViewWidth() {
 
-       
+
         this.moveLeft();
         this.viewWidth = this.containerAboveSlider.getBoundingClientRect().width;
 
@@ -128,13 +120,10 @@ export class TabsSlider {
     }
 
     initSlider() {
-        let that = this;
 
-
-
-        that.rightArrow.addEventListener('click', that.moveRight.bind(that));
-        that.leftArrow.addEventListener('click', that.moveRight.bind(that));
-        window.addEventListener('resize', this.getNewViewWidth.bind(that));
+        this.rightArrow.addEventListener('click', this.debounce(this.moveRight, 300, true).bind(this));
+        this.leftArrow.addEventListener('click', this.debounce(this.moveLeft, 300, true).bind(this));
+        window.addEventListener('resize', this.getNewViewWidth.bind(this));
 
     }
 }
