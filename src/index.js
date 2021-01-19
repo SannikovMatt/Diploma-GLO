@@ -1,3 +1,5 @@
+import 'element-closest-polyfill';
+
 import { menuToggle } from './modules/ModalWindow/MenuToggle/menuToggle.js';
 import { PopupRepairTypes } from './modules/ModalWindow/PopupRepairTypes/PopupRepairTypes';
 import { SliderCarusel } from './modules/PartnersCarousel/Carousel.js';

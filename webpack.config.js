@@ -15,11 +15,14 @@ module.exports = {
 
     entry: {
 
-        main: './index.js'
+        main: ['element-closest-polyfill','@babel/polyfill','./index.js']
     },
     output: {
         filename: `./js/${filename('js')}`,
         path: path.resolve(__dirname, 'build'),
+        environment: {
+            arrowFunction: false
+        }
     },
     mode,
     context: path.resolve(__dirname, 'src'),
@@ -30,14 +33,32 @@ module.exports = {
         }),
         /*new CleanWebpackPlugin(),*/
         new copyWebpackPlugin({
-            patterns:[
+            patterns: [
 
-                {from:'./css' , to: '../build/css' },
-                {from:'./fonts' , to: '../build/fonts' },
-                {from:'./images' , to: '../build/images' }
+                { from: './css', to: '../build/css' },
+                { from: './fonts', to: '../build/fonts' },
+                { from: './images', to: '../build/images' }
             ]
 
         }),
-        
-    ]
+
+    ],
+    module: {
+        rules: [
+
+            {
+                test: /\.js$/i,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+
+
+            },
+        ]
+    }
+
 };
