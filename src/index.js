@@ -25,6 +25,7 @@ import { setDesignMainSlider } from './modules/SlidersAndTabs/Designs/main/Slide
 import { setDesignPopUp } from './modules/SlidersAndTabs/Designs/PopUp/setDesignPopUp.js';
 import { setDesignPopUpTabs } from './modules/SlidersAndTabs/Designs/PopUp/PopUpTabs/setDesignPopUpTabs.js';
 import { setDesignPopUpSlider } from './modules/SlidersAndTabs/Designs/PopUp/PopUpSlider/setDesignPopupSlider.js';
+import { setRepairPopUpTab } from './modules/SlidersAndTabs/RepairTypesSection/RepairPopUp/RepairPopUpTabs/setRepairPopUpTab.js';
 
 //Обработчики меню
 menuToggle();
@@ -73,6 +74,8 @@ setDocumentPopUpSlider();
 setRepairTypesTabs();
 setRepairTypesMainSlider();
 setRepairTypesTabSlider();
+
+setRepairPopUpTab();
 
 
 

@@ -4328,7 +4328,10 @@ div.wave-block:nth-child(17):after {
         padding-left: 30px;
         text-align: center;
         border-collapse: collapse;
-        background: #FBFAF8; }
+        background: #FBFAF8; 
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.5s ;}
         .popup-repair-types-content-table__list tr {
           height: 49px; }
           .popup-repair-types-content-table__list tr:nth-child(even) {
