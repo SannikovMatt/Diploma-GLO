@@ -1,127 +1,273 @@
 
 
+export class TabsSlider {
 
 
-const slidersWrap = document.querySelector('#scheme-list');
+    constructor({ sliderWrap, leftArrow, rightArrow }) {
 
-const leftArrow = document.getElementById('nav-arrow-scheme_left');
-const rightArrow = document.getElementById('nav-arrow-scheme_right');
-
-
-const containerAboveSlider = slidersWrap.parentElement;
-
-
-let leftLimit;
-let rightLimit;
-let viewWidth;
-
-let leftSliderSide;
-let rightSliderSide;
-
-
-let translated = 0;
-
-
-function debounce(func, wait, immediate) {
-    var timeout;
+        this.sliderWrap = document.querySelector(sliderWrap);
+        this.leftArrow = document.querySelector(leftArrow);
+        this.rightArrow = document.querySelector(rightArrow);
 
 
 
-    return function executedFunction() {
-        var context = this;
-        var args = arguments;
+        this.containerAboveSlider = this.sliderWrap.parentElement;
 
-        var later = function () {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
+        this.leftLimit;
+        this.rightLimit;
+        this.viewWidth;
+
+        this.leftSliderSide;
+        this.rightSliderSide;
+
+        this.translated = 0;
+    }
+
+    debounce(func, wait, immediate) {
+        var timeout;
+
+
+
+        return function executedFunction() {
+
+
+
+            var context = this;
+            var args = arguments;
+
+
+
+            var later = function () {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+
+            var callNow = immediate && !timeout;
+
+            clearTimeout(timeout);
+
+            timeout = setTimeout(later, wait);
+
+            if (callNow) func.apply(context, args);
         };
+    }
+    getNewViewWidth() {
 
-        var callNow = immediate && !timeout;
+       
+        this.moveLeft();
+        this.viewWidth = this.containerAboveSlider.getBoundingClientRect().width;
 
-        clearTimeout(timeout);
+    }
+    getCurentPostion() {
 
-        timeout = setTimeout(later, wait);
+        this.leftLimit = this.containerAboveSlider.getBoundingClientRect().left;
+        this.rightLimit = this.containerAboveSlider.getBoundingClientRect().right;
+        this.viewWidth = this.containerAboveSlider.getBoundingClientRect().width;
 
-        if (callNow) func.apply(context, args);
-    };
-};
+        this.leftSliderSide = this.sliderWrap.getBoundingClientRect().left;
+        this.rightSliderSide = this.sliderWrap.getBoundingClientRect().right;
+    }
 
-const getNewViewWidth = () => {
+    getRightLimits() {
 
-    viewWidth = containerAboveSlider.getBoundingClientRect().width;
+        return this.rightSliderSide - this.rightLimit;
+    }
+    moveRight() {
 
-}
-window.addEventListener('resize', getNewViewWidth);
 
-const getCurentPostion = () => {
 
-    leftLimit = containerAboveSlider.getBoundingClientRect().left;
-    rightLimit = containerAboveSlider.getBoundingClientRect().right;
-    viewWidth = containerAboveSlider.getBoundingClientRect().width;
 
-    leftSliderSide = slidersWrap.getBoundingClientRect().left;
-    rightSliderSide = slidersWrap.getBoundingClientRect().right;
-}
-const getRightLimits = () => {
+        this.getCurentPostion();
 
-    return rightSliderSide - rightLimit;
-}
-const moveRight = () => {
+        let posibilityToMove = this.getRightLimits();
 
-    getCurentPostion();
+        let translateStep = this.viewWidth;
 
-    let posibilityToMove = getRightLimits();
+        if (translateStep > posibilityToMove) {
 
-    let translateStep = viewWidth;
+            translateStep = posibilityToMove;
 
-    if (translateStep > posibilityToMove) {
 
-        translateStep = posibilityToMove;
+        }
+
+        translateStep = parseInt(translateStep);
+
+
+        this.translated += translateStep;
+        if (translateStep === 0 && this.translated > (150)) {
+            this.translated = 0;
+        }
+        this.sliderWrap.style.transform = `translateX(-${this.translated}px)`;
 
 
     }
 
-    translateStep = parseInt(translateStep);
+    getLeftLimits() {
 
-
-    translated += translateStep;
-    if (translateStep === 0 && translated > (150)) {
-        translated = 0;
+        return this.leftLimit - this.leftSliderSide;
     }
-    slidersWrap.style.transform = `translateX(-${translated}px)`;
+    moveLeft() {
+
+        this.getCurentPostion();
+        let posibilityToMove = this.getLeftLimits();
+        let translateStep = this.viewWidth;
+        if (translateStep > posibilityToMove) {
+
+            translateStep = posibilityToMove;
+        }
+
+        translateStep = parseInt(translateStep);
+        this.translated -= translateStep;
+        if (translateStep === 0) {
+            this.translated = parseInt(this.getRightLimits());
+        }
+        this.sliderWrap.style.transform = `translateX(-${this.translated}px)`;
 
 
-}
-const getLeftLimits = () => {
 
-    return leftLimit - leftSliderSide;
-}
-
-
-const moveLeft = () => {
-
-    getCurentPostion();
-    let posibilityToMove = getLeftLimits();
-    let translateStep = viewWidth;
-    if (translateStep > posibilityToMove) {
-
-        translateStep = posibilityToMove;
     }
 
-    translateStep = parseInt(translateStep);
-    translated -= translateStep;
-    if (translateStep === 0) {
-        translated = parseInt(getRightLimits());
+    initSlider() {
+        let that = this;
+
+
+
+        that.rightArrow.addEventListener('click', that.moveRight.bind(that));
+        that.leftArrow.addEventListener('click', that.moveRight.bind(that));
+        window.addEventListener('resize', this.getNewViewWidth.bind(that));
+
     }
-    slidersWrap.style.transform = `translateX(-${translated}px)`;
-
-
-
 }
-export const setSchemeTabSlider = () => {
 
-    rightArrow.addEventListener('click', debounce(moveRight, 500, true));
-    leftArrow.addEventListener('click', debounce(moveLeft, 500, true));
-}
+export let schemeTabSlider = new TabsSlider({
+    sliderWrap: '#scheme-list',
+    leftArrow: '#nav-arrow-scheme_left',
+    rightArrow: '#nav-arrow-scheme_right'
+})
+
+
+
+
+// const slidersWrap = document.querySelector('#scheme-list');
+
+// const leftArrow = document.getElementById('nav-arrow-scheme_left');
+// const rightArrow = document.getElementById('nav-arrow-scheme_right');
+
+
+// const containerAboveSlider = slidersWrap.parentElement;
+
+
+// let leftLimit;
+// let rightLimit;
+// let viewWidth;
+
+// let leftSliderSide;
+// let rightSliderSide;
+
+
+// let translated = 0;
+
+
+// function debounce(func, wait, immediate) {
+//     var timeout;
+
+
+
+//     return function executedFunction() {
+//         var context = this;
+//         var args = arguments;
+
+//         var later = function () {
+//             timeout = null;
+//             if (!immediate) func.apply(context, args);
+//         };
+
+//         var callNow = immediate && !timeout;
+
+//         clearTimeout(timeout);
+
+//         timeout = setTimeout(later, wait);
+
+//         if (callNow) func.apply(context, args);
+//     };
+// };
+
+// const getNewViewWidth = () => {
+
+//     viewWidth = containerAboveSlider.getBoundingClientRect().width;
+
+// }
+// window.addEventListener('resize', getNewViewWidth);
+
+// const getCurentPostion = () => {
+
+//     leftLimit = containerAboveSlider.getBoundingClientRect().left;
+//     rightLimit = containerAboveSlider.getBoundingClientRect().right;
+//     viewWidth = containerAboveSlider.getBoundingClientRect().width;
+
+//     leftSliderSide = slidersWrap.getBoundingClientRect().left;
+//     rightSliderSide = slidersWrap.getBoundingClientRect().right;
+// }
+// const getRightLimits = () => {
+
+//     return rightSliderSide - rightLimit;
+// }
+// const moveRight = () => {
+
+//     getCurentPostion();
+
+//     let posibilityToMove = getRightLimits();
+
+//     let translateStep = viewWidth;
+
+//     if (translateStep > posibilityToMove) {
+
+//         translateStep = posibilityToMove;
+
+
+//     }
+
+//     translateStep = parseInt(translateStep);
+
+
+//     translated += translateStep;
+//     if (translateStep === 0 && translated > (150)) {
+//         translated = 0;
+//     }
+//     slidersWrap.style.transform = `translateX(-${translated}px)`;
+
+
+// }
+// const getLeftLimits = () => {
+
+//     return leftLimit - leftSliderSide;
+// }
+
+
+// const moveLeft = () => {
+
+//     getCurentPostion();
+//     let posibilityToMove = getLeftLimits();
+//     let translateStep = viewWidth;
+//     if (translateStep > posibilityToMove) {
+
+//         translateStep = posibilityToMove;
+//     }
+
+//     translateStep = parseInt(translateStep);
+//     translated -= translateStep;
+//     if (translateStep === 0) {
+//         translated = parseInt(getRightLimits());
+//     }
+//     slidersWrap.style.transform = `translateX(-${translated}px)`;
+
+
+
+// }
+// export const setSchemeTabSlider = () => {
+
+//     rightArrow.addEventListener('click', debounce(moveRight, 500, true));
+//     leftArrow.addEventListener('click', debounce(moveLeft, 500, true));
+// }
 
 

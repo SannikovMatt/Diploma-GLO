@@ -35,7 +35,9 @@ import { setDesignPopUpTabs } from './modules/SlidersAndTabs/Designs/PopUp/PopUp
 import { setDesignPopUpSlider } from './modules/SlidersAndTabs/Designs/PopUp/PopUpSlider/setDesignPopupSlider.js';
 import { setRepairPopUpTab } from './modules/SlidersAndTabs/RepairTypesSection/RepairPopUp/RepairPopUpTabs/setRepairPopUpTab.js';
 import { setSchemeTab } from "./modules/SlidersAndTabs/Scheme/ShemeTabs/setSchemeTab.js";
-import { setSchemeTabSlider } from "./modules/SlidersAndTabs/Scheme/SchemeSliders/setSchemeTabSlider.js";
+import { schemeTabSlider, setSchemeTabSlider } from "./modules/SlidersAndTabs/Scheme/SchemeSliders/setSchemeTabSlider.js";
+import { desigTabSlider } from "./modules/SlidersAndTabs/Designs/main/Sliders/tabSlider/setDisagnTabSlider.js";
+import { repairPopUpTabSlider } from "./modules/SlidersAndTabs/RepairTypesSection/RepairPopUp/RepairPopUpTabs/RerairTabsSlider/setRepairTabsSlider.js";
 
 //Обработчики меню
 menuToggle();
@@ -87,6 +89,8 @@ setRepairTypesTabSlider();
 
 setRepairPopUpTab();
 
+repairPopUpTabSlider.initSlider();
+
 
 
 
@@ -115,11 +119,15 @@ setDesignPopUp();
 setDesignPopUpTabs();
 setDesignPopUpSlider();
 
+desigTabSlider.initSlider();
+
 
 /****Scheme*****/
 
 setSchemeTab();
-setSchemeTabSlider();
+//setSchemeTabSlider();
+
+schemeTabSlider.initSlider();
 
 
 
@@ -130,9 +138,7 @@ setSchemeTabSlider();
 
 
 
-
-
-/*const options = {
+const options = {
 
     main: ".wrapper",
     wrap: ".partners-slider",
@@ -150,4 +156,4 @@ setSchemeTabSlider();
 
 const carousel = new SliderCarusel(options);
 
-carousel.init();*/
+carousel.init()
