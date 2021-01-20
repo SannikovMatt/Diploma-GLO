@@ -2043,6 +2043,9 @@ div.wave-block:nth-child(17):after {
         background: url("../images/problems/title_mobile.svg") no-repeat;
         z-index: -1; } }
   .problems-slider {
+    display: flex;
+    width: max-content;
+    transition:transform 0.3s ;
     height: 726px; }
     @media (max-width: 575px) {
       .problems-slider {

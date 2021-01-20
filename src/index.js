@@ -41,6 +41,8 @@ import { desigTabSlider } from "./modules/SlidersAndTabs/Designs/main/Sliders/ta
 import { repairPopUpTabSlider } from "./modules/SlidersAndTabs/RepairTypesSection/RepairPopUp/RepairPopUpTabs/RerairTabsSlider/setRepairTabsSlider.js";
 import { formulaHintsSlider } from "./modules/ModalWindow/Hints/HintsFormula/HintsSlider/setFormulaHintsSlider.js";
 import { setHintsSliderFormula } from "./modules/ModalWindow/Hints/HintsFormula/HintsSlider/HintsSliderPopUp/sethintsSliderPopUp.js";
+import { setHintsSliderProblem } from "./modules/ModalWindow/Hints/HintsProblem/HintsProblemPopUpSmall/setHintsProblemSliderPopUp.js";
+import { problemsHintsSlider } from "./modules/ModalWindow/Hints/HintsProblem/HintsProblemSlider/setHintsProbLemSlider.js";
 
 //Обработчики меню
 menuToggle();
@@ -86,6 +88,8 @@ setDocumentPopUp();
 setDocumentPopUpSlider();
 
 setHintsProblem();
+setHintsSliderProblem();
+problemsHintsSlider.initSlider();
 
 
 
