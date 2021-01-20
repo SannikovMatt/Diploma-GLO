@@ -30,7 +30,7 @@ const showErr = (setTo) => {
     const errorContainer = document.createElement('div');
     const errorStyles = document.createElement('style');
     errorStyles.id = 'error__style';
-   
+
 
     errorStyles.innerHTML =
         `
@@ -98,7 +98,7 @@ const showErr = (setTo) => {
 
     errorContainer.id = 'error__box';
 
-    
+
     let dialogbtn = document.createElement('button');
     let dialogText = document.createElement('h2');
     dialogText.innerHTML = 'Следует согласиться с политикой конфиденциальности для заявки';
@@ -107,7 +107,7 @@ const showErr = (setTo) => {
 
 
 
-    
+
 
 
     errorContainer.appendChild(dialogText);
@@ -116,7 +116,24 @@ const showErr = (setTo) => {
     document.head.appendChild(errorStyles);
     document.body.appendChild(errorContainer);
 
-    querySelector('')
+    let erBtn = document.querySelector('#error__button');
+    erBtn.addEventListener('click',deleteErrorBox);
+
+    const deleteErrorBox = () => {
+
+        let errBox = document.querySelector('#error__box');
+        let errorStyle = document.querySelector('#error__style');
+
+
+        errBox.remove();
+        errorStyles.remove();
+
+
+    }
+
+    erBtn.addEventListener('click',deleteErrorBox);
+
+
 
 }
 
@@ -138,9 +155,8 @@ const submittingHandle = (e) => {
 
     if (checkBox.checked === false) {
 
-        showErr(checkBox.parentElement);
-
-        console.error('Unchecked Checkox');
+        showErr();
+      
         return;
     }
 
