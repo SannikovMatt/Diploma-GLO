@@ -20,7 +20,7 @@ export  class SliderCarusel {
 
     init() {
 
-        console.log('zzz');
+       
 
         this.addClass();
         this.addStyles();
@@ -179,3 +179,23 @@ export  class SliderCarusel {
         document.head.appendChild(style);
     }
 }
+
+
+
+const options = {
+
+    main: ".wrapper",
+    wrap: ".partners-slider",
+    prev: '#partners-arrow_left',
+    next: '#partners-arrow_right',
+    slidesToShow: 3,
+    infinity: true,
+    responsive:
+        [
+            { breakpoint: 1024, slidesToShow: 3 },
+            { breakpoint: 768, slidesToShow: 2 },
+            { breakpoint: 576, slidesToShow: 1, }
+        ]
+}
+
+export const carousel = new SliderCarusel(options);

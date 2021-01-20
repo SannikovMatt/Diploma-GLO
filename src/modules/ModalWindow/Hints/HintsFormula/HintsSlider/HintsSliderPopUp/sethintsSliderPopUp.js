@@ -7,7 +7,7 @@
 const formulaMain = document.getElementById('formula');
 const formula = formulaMain.querySelector('.wrapper_small.desktop-hide');
 
-console.log(formula);
+
 let showedHint;
 let itisShowed;
 
