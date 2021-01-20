@@ -8,26 +8,34 @@ let showedHint ;
 const showHint = (hint)=>{
 
    
-
     showedHint = hint;
     if(showedHint.getBoundingClientRect().top < 0 ){
-        showedHint.style.transform = 'translate3d(0, 100%, 0)';
+        
+        showedHint.style.transform = 'translate3d(0, 170%, 0)' ;
+
+        console.log(showHint);
+        console.log(hint);
+        showedHint.classList.add('rotate__it');
         showedHint.parentElement.parentElement.style.zIndex = '1000';
+      //  showedHint.parentElement.classList.add('active-item');
     }  
 
-    hint.style.visibility = 'visible';
-    hint.style.opacity = '1';
+    hint.closest('.problems-item').classList.add('active-item');
+  //  hint.style.opacity = '1';
+
 
     
 }
 
 //Данная функция скрывает подсказки
 const hideHint = ()=>{
-
-    showedHint.style.visibility = '';
-    showedHint.style.opacity = '';
+    showedHint.closest('.problems-item').classList.remove('active-item');
+    showedHint.classList.remove('rotate__it');
     showedHint.style.transform = '';
-    showedHint.parentElement.parentElement.style.zIndex = '';
+   /* showedHint.style.visibility = '';
+    showedHint.style.opacity = '';
+   
+    */showedHint.parentElement.parentElement.style.zIndex = '';
     showedHint = undefined;
 }
 

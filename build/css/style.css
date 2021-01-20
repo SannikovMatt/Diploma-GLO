@@ -1008,6 +1008,7 @@ template, [hidden] {
           background: url("../images/formula/item_popup_1.svg") no-repeat;
           background-size: contain;
           z-index: -1; }
+          
       .formula-item-popup-02 {
         min-height: 191px; }
         @media (max-width: 575px) {
@@ -1094,6 +1095,11 @@ template, [hidden] {
             .formula-item-popup-06:before {
               background: url("../images/formula/item_popup_1.svg") no-repeat;
               background-size: contain; } }
+
+              .rotate__it:before{
+
+                transform: rotate(180deg);
+              }
 
 .repair-types {
   position: relative;
@@ -6632,3 +6638,9 @@ overflow:hidden; }
 
 .slider-dots {
   display: none; }
+
+
+  .rotate__it:before{
+
+    transform: rotate(180deg);
+  }
