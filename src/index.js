@@ -12,7 +12,8 @@ import { SliderCarusel } from './modules/PartnersCarousel/Carousel.js';
 import { maskPhoneAllFields } from './modules/maskphone/maskPhoneAllFields';
 import { setPopupConsult } from './modules/ModalWindow/PopupConsultation/PopupConsultation';
 import { setPopUpPrivacy } from './modules/ModalWindow/PopupPrivacy/PopupPrivacy.js';
-import { setHintsFormula } from './modules/ModalWindow/Hints/HintsFormula/setHintsFormula.js';
+import { setHintsFormula} from './modules/ModalWindow/Hints/HintsFormula/setHintsFormula.js';
+import { setHintsProblem } from './modules/ModalWindow/Hints/HintsProblem/setHintsPRoblem.js';
 import { setNumberAccordion } from './modules/numberAccordion/numberAccordion.js';
 import { formHandle } from './modules/SendForms/formHandle.js';
 import { setFaqAccordion } from './modules/FaqAccordion/setFaqAccordion.js';
@@ -38,6 +39,8 @@ import { setSchemeTab } from "./modules/SlidersAndTabs/Scheme/ShemeTabs/setSchem
 import { schemeTabSlider, setSchemeTabSlider } from "./modules/SlidersAndTabs/Scheme/SchemeSliders/setSchemeTabSlider.js";
 import { desigTabSlider } from "./modules/SlidersAndTabs/Designs/main/Sliders/tabSlider/setDisagnTabSlider.js";
 import { repairPopUpTabSlider } from "./modules/SlidersAndTabs/RepairTypesSection/RepairPopUp/RepairPopUpTabs/RerairTabsSlider/setRepairTabsSlider.js";
+import { formulaHintsSlider } from "./modules/ModalWindow/Hints/HintsFormula/HintsSlider/setFormulaHintsSlider.js";
+import { setHintsSliderFormula } from "./modules/ModalWindow/Hints/HintsFormula/HintsSlider/HintsSliderPopUp/sethintsSliderPopUp.js";
 
 //Обработчики меню
 menuToggle();
@@ -57,6 +60,9 @@ setPopUpPrivacy();
 
 //Подасказки на секции Формула
 setHintsFormula();
+
+formulaHintsSlider.initSlider();
+setHintsSliderFormula();
 
 //Аккордион номера
 setNumberAccordion();
@@ -79,6 +85,7 @@ setDocumentPopUp();
 //Слайдер попап окна
 setDocumentPopUpSlider();
 
+setHintsProblem();
 
 
 

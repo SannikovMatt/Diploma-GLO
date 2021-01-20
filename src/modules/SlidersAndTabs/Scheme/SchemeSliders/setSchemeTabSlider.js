@@ -10,7 +10,7 @@ export class TabsSlider {
         this.rightArrow = document.querySelector(rightArrow);
 
 
-
+       
         this.containerAboveSlider = this.sliderWrap.parentElement;
 
      

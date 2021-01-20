@@ -30,43 +30,93 @@ const showErr = (setTo) => {
     const errorContainer = document.createElement('div');
     const errorStyles = document.createElement('style');
     errorStyles.id = 'error__style';
-    errorContainer.classList.add('formula-item__descr')
+   
 
     errorStyles.innerHTML =
         `
     #error__box{
+        top: 0;
+        background-color: rgb(213 172 8 / 50%);
+        top:30%;
+        left:30%;
+        width: 50%;
+        height: 50%;
+        visibility: visible;
+        opacity: 1;      
         
-        width:120%;
-        visibility : visible;
-        opacity:1;
-        background : yellow;
-        position:absolute;
-        height:120%;
-        border-radius:50px;
-        display:flex;
-        justify-items: center;
-        align-items: center;
+        position: fixed;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items:center;
         text-align: center;
-        left:-15%
+        z-index: 11000;
+        flex-direction: column;
+       
 
         
+    }
+
+    #error__box h2{
+
+        color:#2f2a13;
+      
+
     }
     #error__box:hover{
 
         color:green; 
         cursor:pointer;
     }
+
+    #error__button{
+
+        width: 244px;
+        height: 44px;
+        background: -webkit-gradient(linear, left top, right top, from(#F48922), to(#FFB015));
+        background: linear-gradient(90deg, #F48922 0%, #FFB015 100%);
+        border: none;
+        border-radius: 50px;
+        font-size: 19px;
+        color: #ffffff;
+        -webkit-box-shadow: 0 8px 35px rgba(254, 171, 23, 0.7);
+        box-shadow: 0 8px 35px rgba(254, 171, 23, 0.7);
+        cursor: pointer;
+        margin-top:30px;
+    }
+
+    #error__button:hover {
+        background: -webkit-gradient(linear, left top, right top, from(#f17c0c), to(#fba600)), 50%;
+        background: linear-gradient(90deg, #f17c0c 0%, #fba600 100%), 50%;
+    }
         
     
     
     `
 
+
+
     errorContainer.id = 'error__box';
 
-    errorContainer.textContent = 'Чек бокс не отмечен';
+    
+    let dialogbtn = document.createElement('button');
+    let dialogText = document.createElement('h2');
+    dialogText.innerHTML = 'Следует согласиться с политикой конфиденциальности для заявки';
+    dialogbtn.id = 'error__button';
+    dialogbtn.innerHTML = 'хорошо';
+
+
+
+    
+
+
+    errorContainer.appendChild(dialogText);
+    errorContainer.appendChild(dialogbtn);
 
     document.head.appendChild(errorStyles);
-    setTo.appendChild(errorContainer);
+    document.body.appendChild(errorContainer);
+
+    querySelector('')
 
 }
 
@@ -88,7 +138,7 @@ const submittingHandle = (e) => {
 
     if (checkBox.checked === false) {
 
-        //showErr(checkBox.parentElement);
+        showErr(checkBox.parentElement);
 
         console.error('Unchecked Checkox');
         return;
