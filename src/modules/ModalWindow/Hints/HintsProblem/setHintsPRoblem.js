@@ -10,7 +10,7 @@ const showHint = (hint)=>{
    
     showedHint = hint;
 
-    console.log(showedHint.getBoundingClientRect().top);
+    
     if(showedHint.getBoundingClientRect().top < 0 ){
         
         showedHint.style.transform = 'translate3d(0, 170%, 0)' ;
@@ -18,7 +18,7 @@ const showHint = (hint)=>{
         
         showedHint.classList.add('rotate__it');
 
-        console.log('DOBAVIL');
+      
         showedHint.parentElement.parentElement.style.zIndex = '1000';
       //  showedHint.parentElement.classList.add('active-item');
     }  
