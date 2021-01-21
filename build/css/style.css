@@ -2168,7 +2168,7 @@ div.wave-block:nth-child(17):after {
         transition: 0.4s; }
         @media (min-width: 1025px) {
           .problems-item__icon-inner {
-            opacity: 0; } }
+          } }
       .problems-item__icon .svg-wrap {
         position: absolute;
         top: 0;
@@ -6003,11 +6003,11 @@ div.wave-block:nth-child(17):after {
       .active-item .problems-item__icon {
         width: 48px;
         height: 48px; } }
-    @media (max-width: 1024px) {
+    
       .active-item .problems-item__icon-inner {
         background: -webkit-gradient(linear, left top, right top, from(#F48922), to(#FFB015));
         background: linear-gradient(90deg, #F48922 0%, #FFB015 100%);
-        color: #FFFFFF; } }
+        color: #FFFFFF; } 
     @media (max-width: 575px) {
       .active-item .problems-item__icon-inner {
         width: 36px;
@@ -6040,10 +6040,10 @@ div.wave-block:nth-child(17):after {
           height: 24px; } }
     .active-item .problems-item__icon-inner svg path {
       fill: #ffffff; }
-  @media (max-width: 1024px) {
+ 
     .active-item .problems-item-popup {
       visibility: visible;
-      opacity: 1; } }
+      opacity: 1; } 
 
 #designs > .wrapper > div.preview-block.visible > .preview-block__item > .preview-block__item-inner.preview_active {
   color: #ffffff; }
