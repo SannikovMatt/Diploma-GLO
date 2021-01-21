@@ -6,6 +6,37 @@ import { hidePopupThank, showPopupThank } from "../ModalWindow/PopupThank/setPop
 //Находим все формы
 const forms = document.querySelectorAll('form');
 
+
+
+
+
+const setInputsValidation = () => {
+
+    forms.forEach(form => {
+
+        const nameInput = form.querySelector('[name="name"]');
+
+
+
+        if (nameInput) {
+
+
+            nameInput.addEventListener('input', (e) => {
+
+                const target = e.target;
+              
+
+                target.value = target.value.replace(/[^а-я ]/gi, '');
+
+            })
+        }
+
+    })
+
+}
+
+setInputsValidation();
+
 //Запрос к базе данных
 const postData = (data) => {
 
@@ -117,7 +148,7 @@ const showErr = (setTo) => {
     document.body.appendChild(errorContainer);
 
     let erBtn = document.querySelector('#error__button');
-    erBtn.addEventListener('click',deleteErrorBox);
+    erBtn.addEventListener('click', deleteErrorBox);
 
     const deleteErrorBox = () => {
 
@@ -131,7 +162,7 @@ const showErr = (setTo) => {
 
     }
 
-    erBtn.addEventListener('click',deleteErrorBox);
+    erBtn.addEventListener('click', deleteErrorBox);
 
 
 
@@ -156,7 +187,7 @@ const submittingHandle = (e) => {
     if (checkBox.checked === false) {
 
         showErr();
-      
+
         return;
     }
 
